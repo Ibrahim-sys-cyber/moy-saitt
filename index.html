@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Страница заказов</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    .success {
+      margin-top: 15px;
+      color: green;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Заказ</h1>
+
+  <form onsubmit="return handleSubmit(event)">
+    <input type="text" placeholder="Ваше имя" required>
+    
+    <select required>
+      <option value="">Выберите товар</option>
+      <option>Телефон</option>
+      <option>Ноутбук</option>
+      <option>Наушники</option>
+    </select>
+
+    <input type="number" placeholder="Количество" required>
+
+    <button type="submit">Отправить заказ</button>
+  </form>
+
+  <div class="success" id="message"></div>
+</div>
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault();
+    document.getElementById("message").innerText = "✅ Заказ отправлен!";
+    return false;
+  }
+</script>
+
+</body>
+</html>
